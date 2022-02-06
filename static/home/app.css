@@ -3,9 +3,17 @@ body {
     font-family: "Nunito", sans-serif;
   }
 
-  .api {
+.api {
       width: 7rem;
-  }
+    }
+
+.memoji {
+    width: 10rem;
+}
+
+.memoji1{
+    width: 8rem;
+}
   
   .blurb h2 {
     color: #ea1c2c;
