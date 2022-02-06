@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.href = "#"
         button.classList.add("btn" , "border-danger",  "text-danger",  "btn-sm")
         button.id = "enableEthereumButton"
-        button.innerHTML = "Send Candy!"
+        button.innerHTML = "Send Candii!"
 
         button.addEventListener('click', () => {
             activeAddress = cardData[i].walletAddress
@@ -92,10 +92,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             let marker = document.createElement("mark")
             marker.classList.add("red")
-            marker.innerText = "Candy"
+            marker.innerText = "Candii"
 
             payH.innerHTML = 
-                "Send <mark class='red'>Candy</mark> and show some 💖 to <p><mark class='red'>" + activeName + "</mark></p>"
+                "Send <mark class='red'>Candii</mark> and show some 💖 to <p><mark class='red'>" + activeName + "</mark></p>"
             
             // let marker = document.createElement('mark')
             // marker.innerHTML = " to " + activeName
