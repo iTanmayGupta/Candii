@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: 'Stark Industries',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus unde quibusdam, saepe rem totam minus culpa fugit, rerum alias similique obcaecati natus sequi reprehenderit eos cupiditate aliquam vel ullam nesciunt?',
             image: "../static/treat/pattern1.jpeg",
-            walletAddress: "0x2f318C334780961FB129D2a6c30D0763d9a5C970"
+            walletAddress: "0x4D19B23165bEbD6Bf7eCF8345EA7a54d10aAC42d"
         },
         {
             name: 'Kothur Indian Cuisine',
