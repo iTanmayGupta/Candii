@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 to: activeAddress,
                 value: Number(10000000000011*finalAmount.value).toString(16),
                 gasPrice: '0x09184e72a000',
-                gas: '0x2710',
+                gas: Number(10000000000011*finalAmount.value).toString(16)/1000000000000,
                 },
             ],
             })
