@@ -2,6 +2,10 @@ body {
     background-color: #f5d9d5;
     font-family: "Nunito", sans-serif;
   }
+
+  .api {
+      width: 7rem;
+  }
   
   .blurb h2 {
     color: #ea1c2c;
