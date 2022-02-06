@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.href = "#"
         button.classList.add("btn" , "border-danger",  "text-danger",  "btn-sm")
         button.id = "enableEthereumButton"
-        button.innerHTML = "Buy a Candy!"
+        button.innerHTML = "Send Candy!"
 
         button.addEventListener('click', () => {
             activeAddress = cardData[i].walletAddress
