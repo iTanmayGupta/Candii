@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                 from: accounts[0],
                 to: activeAddress,
-                value: Number(1000000000000*finalAmount.value).toString(16),
+                value: Number(10000000000011*finalAmount.value).toString(16),
                 gasPrice: '0x09184e72a000',
                 gas: '0x2710',
                 },
