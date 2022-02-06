@@ -7,9 +7,13 @@ app = Flask(__name__)
 def main():	
 	return render_template('index.html')
 
-@app.route("/login")
-def login():	
-	return render_template('login.html')
+@app.route("/treat")
+def treat():	
+	return render_template('treat.html')
+
+@app.route("/home")
+def home():	
+	return render_template('index.html')
 
 
 if __name__ == "__main__":
