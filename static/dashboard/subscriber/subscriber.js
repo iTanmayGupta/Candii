@@ -12,10 +12,11 @@ function bodyLoaded() {
 
 function getUserDetails() {
     // need to make a backend call to get user info
+    
     // username
     let name = "Username";
     document.getElementById("username").innerHTML = name;
     // balance
     let balance = 0.0;
-    document.getElementById("balance").innerHTML = balance;
+    document.getElementById("balance").innerHTML = balance + " ETH";
 }

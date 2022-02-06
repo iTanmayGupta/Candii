@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name=”monetization” content=”$ilp.uphold.com/ZkFjfmiQk886”>
 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="../static/dashboard/subscriber/subscriber.css" />
@@ -13,28 +14,31 @@
 
         <title>Candy</title>
     </head>
-    <body>
+    <body class="h-screen overflow-hidden">
         <!-- Header -->
-        <div class="m-2 p-2 rounded-xl bg-red-300 h-40 flex">
+        <div class="mb-2 mt-3 mx-3 p-2 rounded-xl bg-red-300 h-1/5 flex">
             <!-- Name and balance -->
             <div class="flex-initial w-1/4">
-                <div id="username" class="pl-8 pt-4"></div><br>
-                <div id="balance" class="text-lg pl-8"></div>
+                <div id="username" class="pl-8 pt-5"></div><br>
+                <div id="balance" class="text-xl pl-8"></div>
             </div>
             <!-- Buttons -->
-            <div class="flex-initial w-3/4">
-
+            <div class="relative flex-initial w-3/4">
+                <button class="absolute top-12 right-12 text-lg 
+                font-medium bg-red-400 rounded-lg py-1 px-4"> Send </button>
             </div>
         </div>
 
-        <!-- Following -->
-        <div>
+        <div class="flex mx-3 h-3/4 bg-red-300 rounded-xl">
+            <!-- Following -->
+            <div class="flex-initial mx-10 w-1/2">
 
-        </div>
+            </div>
 
-        <!-- History -->
-        <div>
+            <!-- History -->
+            <div class="flex-inital ml-2 w-1/2">
 
+            </div>
         </div>
 
         <!-- Optional: Messages -->
