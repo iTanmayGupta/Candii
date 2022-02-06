@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: 'Kothur Indian Cuisine',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus unde quibusdam, saepe rem totam minus culpa fugit, rerum alias similique obcaecati natus sequi reprehenderit eos cupiditate aliquam vel ullam nesciunt?',
             image: "../static/treat/pattern2.jpeg",
-            walletAddress: "0xfbb61b8b98a59fbc4bd79c23212addbefaeb289f"
+            walletAddress: "0x4D19B23165bEbD6Bf7eCF8345EA7a54d10aAC42d"
         },
         {
             name: 'Chelsea Cutler',
@@ -126,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
             finalAmount.value = amt
             console.log(finalAmount)
         })
+    }
 
         const ethereumButton = document.querySelector('#enableEthereumButton');
         const sendEthButton = document.querySelector('#sendMoney');
@@ -137,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
         //Sending Ethereum to an address
         sendEthButton.addEventListener('click', () => {
             let finalAmount = document.querySelector("#finalAmount")
-            console.log(finalAmount.value)
+            console.log(activeAddress)
         ethereum
             .request({
             method: 'eth_sendTransaction',
@@ -161,6 +162,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         async function getAccount() {
         accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-        }
+        
     }
 })
