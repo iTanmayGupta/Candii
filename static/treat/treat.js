@@ -7,55 +7,55 @@ document.addEventListener('DOMContentLoaded', function() {
             name: 'First Thing',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus unde quibusdam, saepe rem totam minus culpa fugit, rerum alias similique obcaecati natus sequi reprehenderit eos cupiditate aliquam vel ullam nesciunt?',
             image: "../static/treat/pattern1.jpeg",
-            walletAddress: "123"
+            walletAddress: "0x2f318C334780961FB129D2a6c30D0763d9a5C970"
         },
         {
             name: 'Second Thing',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus unde quibusdam, saepe rem totam minus culpa fugit, rerum alias similique obcaecati natus sequi reprehenderit eos cupiditate aliquam vel ullam nesciunt?',
             image: "../static/treat/pattern2.jpeg",
-            walletAddress: "1234"
+            walletAddress: "0xfbb61b8b98a59fbc4bd79c23212addbefaeb289f"
         },
         {
             name: 'Third Thing',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus unde quibusdam, saepe rem totam minus culpa fugit, rerum alias similique obcaecati natus sequi reprehenderit eos cupiditate aliquam vel ullam nesciunt?',
             image: "../static/treat/pattern3.jpeg",
-            walletAddress: "12345"
+            walletAddress: "0x9fdb5065c5f5cbeef0fb9784bc2e8e1b3621d58a"
         },
         {
             name: 'Fourth Thing',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus unde quibusdam, saepe rem totam minus culpa fugit, rerum alias similique obcaecati natus sequi reprehenderit eos cupiditate aliquam vel ullam nesciunt?',
             image: "../static/treat/pattern4.jpeg",
-            walletAddress: "123456"
+            walletAddress: "0xfbb61b8b98a59fbc4bd79c23212addbefaeb289f"
         },
         {
             name: 'Fifth Thing',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus unde quibusdam, saepe rem totam minus culpa fugit, rerum alias similique obcaecati natus sequi reprehenderit eos cupiditate aliquam vel ullam nesciunt?',
             image: "../static/treat/pattern5.jpeg",
-            walletAddress: "1234567"
+            walletAddress: "0x3c0e319ced31717b5c6dc921610423e9a748eee6"
         },
         {
             name: 'Sixth Thing',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus unde quibusdam, saepe rem totam minus culpa fugit, rerum alias similique obcaecati natus sequi reprehenderit eos cupiditate aliquam vel ullam nesciunt?',
             image: "../static/treat/pattern6.jpeg",
-            walletAddress: "12345678"
+            walletAddress: "0x6f0979e2e7aa0dfbc23cf06e46a99735e165f027"
         },
         {
             name: 'Seventh Thing',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus unde quibusdam, saepe rem totam minus culpa fugit, rerum alias similique obcaecati natus sequi reprehenderit eos cupiditate aliquam vel ullam nesciunt?',
             image: "../static/treat/pattern7.jpeg",
-            walletAddress: "123456789"
+            walletAddress: "0x2f318C334780961FB129D2a6c30D0763d9a5C970"
         },
         {
             name: 'Eight Thing',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus unde quibusdam, saepe rem totam minus culpa fugit, rerum alias similique obcaecati natus sequi reprehenderit eos cupiditate aliquam vel ullam nesciunt?',
             image: "../static/treat/pattern8.jpeg",
-            walletAddress: "1234567890"
+            walletAddress: "0x2f318C334780961FB129D2a6c30D0763d9a5C970"
         },
         {
             name: 'Ninth Thing',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus unde quibusdam, saepe rem totam minus culpa fugit, rerum alias similique obcaecati natus sequi reprehenderit eos cupiditate aliquam vel ullam nesciunt?',
             image: "../static/treat/pattern9.jpeg",
-            walletAddress: "12345678901"
+            walletAddress: "0x2f318C334780961FB129D2a6c30D0763d9a5C970"
         }
     ]
     let cont = document.getElementById("c1")
@@ -103,38 +103,49 @@ document.addEventListener('DOMContentLoaded', function() {
         cont.append(mainClass)
     }
 
-    const ethereumButton = document.querySelector('#enableEthereumButton');
-const sendEthButton = document.querySelector('#sendMoney');
+    let amount = document.querySelectorAll(".amountNum")
+        for(let i=0; i<amount.length; i++) {
+        amount[i].addEventListener('click', () => {
+            let amt = amount[i].innerHTML
+            let finalAmount = document.querySelector("#finalAmount")
+            finalAmount.value = amt
+            console.log(finalAmount)
+        })
 
-console.log(ethereumButton)
+        const ethereumButton = document.querySelector('#enableEthereumButton');
+        const sendEthButton = document.querySelector('#sendMoney');
 
-let accounts = [];
+        console.log(ethereumButton)
 
-//Sending Ethereum to an address
-sendEthButton.addEventListener('click', () => {
-    console.log("Tanmay")
-  ethereum
-    .request({
-      method: 'eth_sendTransaction',
-      params: [
-        {
-          from: accounts[0],
-          to: '0x2f318C334780961FB129D2a6c30D0763d9a5C970',
-          value: '0x29a2241af62c0000',
-          gasPrice: '0x09184e72a000',
-          gas: '0x2710',
-        },
-      ],
-    })
-    .then((txHash) => console.log(txHash))
-    .catch((error) => console.error);
-});
+        let accounts = [];
 
-ethereumButton.addEventListener('click', () => {
-  getAccount();
-});
+        //Sending Ethereum to an address
+        sendEthButton.addEventListener('click', () => {
+            let finalAmount = document.querySelector("#finalAmount")
+            console.log(finalAmount.value)
+        ethereum
+            .request({
+            method: 'eth_sendTransaction',
+            params: [
+                {
+                from: accounts[0],
+                to: activeAddress,
+                value: Number(1000000000000*finalAmount.value).toString(16),
+                gasPrice: '0x09184e72a000',
+                gas: '0x2710',
+                },
+            ],
+            })
+            .then((txHash) => console.log(txHash))
+            .catch((error) => console.error);
+        });
 
-async function getAccount() {
-  accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-}
+        ethereumButton.addEventListener('click', () => {
+        getAccount();
+        });
+
+        async function getAccount() {
+        accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+        }
+    }
 })
