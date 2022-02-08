@@ -8,7 +8,21 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name=”monetization” content=”$ilp.uphold.com/ZkFjfmiQk886”>
+    <meta name=monetization content=$ilp.uphold.com/ZkFjfmiQk886>
+
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+
+    <script>
+      if (document.monetization) {
+        document.monetization.addEventListener('monetizationstart', () => {
+          document.getElementById('exclusive').classList.remove('hidden');
+        })
+      }
+    </script>
 
     <!-- Google Font -->
     <link

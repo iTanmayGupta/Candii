@@ -7,7 +7,21 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name=”monetization” content=”$ilp.uphold.com/ZkFjfmiQk886”>
+    <meta name=monetization content=$ilp.uphold.com/ZkFjfmiQk886>
+
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+
+    <script>
+      if (document.monetization) {
+        document.monetization.addEventListener('monetizationstart', () => {
+          document.getElementById('exclusive').classList.remove('hidden');
+        })
+      }
+    </script>
 
     <!-- Google Font -->
     <link
@@ -160,8 +174,7 @@
                   src="../static/home/imgs/lolli_icon.png"
                   alt=""
                 />
-                <p class="lead">
-                </p>
+                <p class="lead"> </p>
                 <img 
                     class="memoji1"
                     src="../static/home/imgs/anujj.png"
@@ -174,6 +187,8 @@
                     class="memoji"
                     src="../static/home/imgs/abhi.png"
                 />
+                <br>
+                <h4 id="exclusive" class="hidden"> Thank you for visiting and using Coil! </h4>
               </div>
             </div>
           </div>
